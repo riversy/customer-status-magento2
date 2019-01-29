@@ -1,0 +1,11 @@
+{
+    "customer_status": {
+        "column": {
+            "customer_id": true,
+            "status": true
+        },
+        "constraint": {
+            "CUSTOMER_STATUS_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+        }
+    }
+}

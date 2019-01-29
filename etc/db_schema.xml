@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_status" resource="default" engine="innodb" comment="Customer Status Table">
+
+        <column xsi:type="int"
+            name="customer_id"
+            padding="10"
+            unsigned="true"
+            nullable="false"
+            identity="false"
+            comment="Customer Entity Id"/>
+
+        <column xsi:type="varchar"
+            name="status"
+            nullable="false"
+            length="255"
+            comment="Status Value"/>
+
+        <constraint xsi:type="foreign"
+            referenceId="CUSTOMER_STATUS_ID_CUSTOMER_ENTITY_ID"
+            table="customer_status"
+            column="customer_id"
+            referenceTable="customer_entity"
+            referenceColumn="entity_id"
+            onDelete="CASCADE"/>
+    </table>
+
+</schema>
