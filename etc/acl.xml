@@ -15,8 +15,10 @@
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
                             <resource id="Magento_Customer::config_customer">
-                                <resource id="Riversy_CustomerStatus::settings" title="Customer Status Settings Access"
-                                          translate="title" sortOrder="100"/>
+                                <resource id="Riversy_CustomerStatus::settings"
+                                          title="Customer Status Settings Access"
+                                          translate="title"
+                                          sortOrder="100"/>
                             </resource>
                         </resource>
                     </resource>

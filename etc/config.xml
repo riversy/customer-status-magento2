@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <customer>
+            <status>
+                <values></values>
+            </status>
+        </customer>
+        <customer_status>
+            <general>
+                <status_values><![CDATA[Online
+Away
+Offline]]></status_values>
+            </general>
+
+        </customer_status>
+    </default>
+</config>
