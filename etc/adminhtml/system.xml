@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customer_status" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+
+            <label>Customer Status</label>
+            <tab>customer</tab>
+            <resource>Riversy_CustomerStatus::settings</resource>
+
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="35"
+                   showInDefault="1">
+
+                <label>General Settings</label>
+
+                <field id="status_values"
+                       translate="label comment"
+                       type="textarea"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+
+                    <label>Status Values</label>
+                    <comment>Please enter one status per line. Empty lines will be ignored.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
