@@ -1,0 +1,23 @@
+<?php
+/** @var \Riversy\CustomerStatus\Block\Account\StatusForm $block */
+?>
+
+
+<form class="form form-newsletter-manage" action="<?= $block->escapeUrl($block->getAction()) ?>"
+      method="post" id="form-validate">
+
+    <fieldset class="fieldset">
+        <?= $block->getBlockHtml('formkey') ?>
+        <div class="field">
+            <?= $block->getStatusOptionsSelectHtml(); ?>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Save')) ?>" class="action save primary">
+                <span><?= $block->escapeHtml(__('Save')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>

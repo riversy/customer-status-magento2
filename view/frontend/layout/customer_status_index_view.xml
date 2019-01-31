@@ -13,7 +13,13 @@
             </arguments>
         </referenceBlock>
         <referenceContainer name="content">
-
+            <referenceContainer name="content">
+                <block class="Riversy\CustomerStatus\Block\Account\StatusForm" name="customer_status" cacheable="false">
+                    <arguments>
+                        <argument name="template" xsi:type="string">Riversy_CustomerStatus::account/status_form.phtml</argument>
+                    </arguments>
+                </block>
+            </referenceContainer>
         </referenceContainer>
     </body>
 </page>
