@@ -6,7 +6,7 @@ This module allows a customer to select the status from the list of available st
 
 Please install the module via composer. 
 
-    composer require riversy/module-customer-status
+    composer require "riversy/module-customer-status ~1.0.0"
     php bin/magento module:enable 
     php bin/magento setup:upgrade
 
