@@ -6,6 +6,7 @@ namespace Riversy\CustomerStatus\Block\Account;
 use Magento\Customer\Model\Session;
 use Magento\Framework\View\Element\Template\Context;
 use Riversy\CustomerStatus\Model\OptionsProvider;
+use Magento\Customer\Api\CustomerRepositoryInterface;
 
 class StatusForm extends \Magento\Framework\View\Element\Template
 {
@@ -25,16 +26,23 @@ class StatusForm extends \Magento\Framework\View\Element\Template
     private $optionsProvider;
 
     /**
+     * @var CustomerRepositoryInterface
+     */
+    private $customerRepository;
+
+    /**
      * Status constructor.
      * @param Context $context
      * @param Session $customerSession
      * @param OptionsProvider $optionsProvider
+     * @param CustomerRepositoryInterface $customerRepository
      * @param array $data
      */
     public function __construct(
         Context $context,
         Session $customerSession,
         OptionsProvider $optionsProvider,
+        CustomerRepositoryInterface $customerRepository,
         array $data = []
     )
     {
@@ -42,6 +50,7 @@ class StatusForm extends \Magento\Framework\View\Element\Template
         $this->context = $context;
         $this->customerSession = $customerSession;
         $this->optionsProvider = $optionsProvider;
+        $this->customerRepository = $customerRepository;
     }
 
     /**
@@ -89,9 +98,26 @@ class StatusForm extends \Magento\Framework\View\Element\Template
         return $html;
     }
 
-    public function getStatusValue()
+    private function getStatusValue()
     {
-        ///TODO Payload value later
-        return '';
+        $customerId = $this->getCustomerId();
+        if (!$customerId) {
+            return '';
+        }
+
+        $customer = $this->customerRepository->getById($customerId);
+        if (!$customer) {
+            return '';
+        }
+
+        $extensionAttributes = $customer->getExtensionAttributes();
+        $customerStatus = $extensionAttributes->getCustomerStatus();
+
+        return $customerStatus ?: '';
+    }
+
+    private function getCustomerId()
+    {
+        return $this->customerSession->getCustomerId();
     }
 }

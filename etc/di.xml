@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Riversy\CustomerStatus\Api\Data\StatusInterface"
+                type="Riversy\CustomerStatus\Model\Data\Status" />
+
+    <preference for="Riversy\CustomerStatus\Api\CustomerStatusRepositoryInterface"
+                type="Riversy\CustomerStatus\Model\ResourceModel\CustomerStatusRepository" />
+
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="add_support_for_customer_status_in_customer_repository"
+                type="Riversy\CustomerStatus\Model\Plugin\CustomerRepository"
+                sortOrder="-1" />
+    </type>
+</config>
