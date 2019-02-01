@@ -22,19 +22,19 @@ If you are in production mode, please the following command to trigger redeploy 
 
 - Ability to set Status in the Personal Account
 
-![](https://s3-eu-west-1.amazonaws.com/test-job-bucket/image1.png)
+![](https://s3.eu-central-1.amazonaws.com/monosnp/customer-status/image1.png)
 
 - Ability to see Status in the site Header.
 
-![](https://s3-eu-west-1.amazonaws.com/test-job-bucket/image2.png)
+![](https://s3.eu-central-1.amazonaws.com/monosnp/customer-status/image2.png)
 
 - Ability to edit Status in Admin Panel.
 
-![](https://s3-eu-west-1.amazonaws.com/test-job-bucket/image3.png)
+![](https://s3.eu-central-1.amazonaws.com/monosnp/customer-status/image3.png)
 
 - Ability to Reconfigure list of Statuses in the Admin Panel.
 
-![](https://s3-eu-west-1.amazonaws.com/test-job-bucket/image4.png)
+![](https://s3.eu-central-1.amazonaws.com/monosnp/customer-status/image4.png)
 
 ## License
 
