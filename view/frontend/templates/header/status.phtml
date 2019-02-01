@@ -9,7 +9,9 @@
 <?php if ($block->customerLoggedIn()): ?>
 <li class="greet welcome" data-bind="scope: 'customer'">
     <!-- ko if: customer().status  -->
-    <span data-bind="text: new String('<?= $block->escapeHtml(__('Your status: %1!', '%1')) ?>').replace('%1', customer().status)"></span>
+    <a href="<?= $block->getUrl('customer_status/index/view') ?>">
+        <span data-bind="text: new String('<?= $block->escapeHtml(__('Your status: %1!', '%1')) ?>').replace('%1', customer().status)"></span>
+    </a>
     <!-- /ko -->
     <!-- ko ifnot: customer().status  -->
     <a href="<?= $block->getUrl('customer_status/index/view') ?>">
