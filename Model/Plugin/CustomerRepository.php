@@ -9,7 +9,6 @@ use Magento\Customer\Api\Data\CustomerExtensionInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Riversy\CustomerStatus\Model\ResourceModel\CustomerStatusRepository;
-use Riversy\CustomerStatus\Api\Data\StatusInterface;
 use Riversy\CustomerStatus\Model\StatusFactory;
 
 class CustomerRepository

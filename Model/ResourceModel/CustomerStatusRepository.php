@@ -71,4 +71,30 @@ class CustomerStatusRepository implements CustomerStatusRepositoryInterface
         return $statusModel;
     }
 
+    /**
+     * Retrieve an array of Customer Code's indexed by Customer ID
+     *
+     * @param int[] $customerIds
+     * @return StatusInterface[] Indexed by Customer ID
+     */
+    public function getListByCustomerIds(array $customerIds)
+    {
+        return array_map([$this, 'getStatusByCustomerId'], $customerIds);
+    }
+
+    /**
+     * @param $customerId
+     * @return StatusInterface
+     */
+    private function getStatusByCustomerId($customerId)
+    {
+        try {
+            $statusModel = $this->getByCustomerId($customerId);
+        } catch (NoSuchEntityException $noSuchEntityException) {
+            $statusModel = $this->statusFactory->create();
+            $statusModel->setCustomerId($customerId);
+        }
+
+        return $statusModel;
+    }
 }
