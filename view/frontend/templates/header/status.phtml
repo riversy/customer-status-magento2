@@ -1,0 +1,33 @@
+<?php
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Customer\Block\Account\Customer $block
+ */
+?>
+
+<?php if ($block->customerLoggedIn()): ?>
+<li class="greet welcome" data-bind="scope: 'customer'">
+    <!-- ko if: customer().status  -->
+    <span data-bind="text: new String('<?= $block->escapeHtml(__('Your status: %1!', '%1')) ?>').replace('%1', customer().status)"></span>
+    <!-- /ko -->
+    <!-- ko ifnot: customer().status  -->
+    <a href="<?= $block->getUrl('customer_status/index/view') ?>">
+        <span data-bind="text: new String('<?= $block->escapeHtml(__('Click to define your status')) ?>')"></span>
+    </a>
+    <!-- /ko -->
+</li>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Riversy_CustomerStatus/js/header/status"
+                    }
+                }
+            }
+        }
+    }
+</script>

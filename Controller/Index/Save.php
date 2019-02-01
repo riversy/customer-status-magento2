@@ -65,7 +65,7 @@ class Save extends AbstractAction implements HttpPostActionInterface
             $customer->setExtensionAttributes($extensionAttributes);
 
             $this->customerRepository->save($customer);
-            
+
             if ($customerStatus) {
                 $this->messageManager->addSuccessMessage(__("Your status changed to \"%1\".", $customerStatus));
             } else {
